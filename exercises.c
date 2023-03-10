@@ -106,7 +106,10 @@ Función que suma los vectores `a` y `b` y
 actualiza el vector `c` con el resultado de la suma.
 */
 void sumaV(Vector * a, Vector * b, Vector * c) {
-
+  c = (Vector*) malloc(a->capacidad * sizeof(Vector));
+  for (int i = 0; i < c->capacidad; i++) {
+    c->datos[i] = a->datos[i] + b->datos[i];
+  }
 }
 
 /*
